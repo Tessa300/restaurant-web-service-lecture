@@ -1,0 +1,133 @@
+:root {
+    --main: #ffb540;
+    --main-dark: #331f01;
+    --background: #e9deba;
+    --background-dark: #6f5500;
+}
+body{
+    background-color: var(--background);
+    font-family: Arial, Helvetica, sans-serif;
+    letter-spacing: 5px;
+    line-height: 1.5;
+    margin: 0;
+}
+
+header{		
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+header p, h1, h2{
+    font-family: "Lucida Console", "Courier New", monospace;
+    text-align: center;
+    color: var(--main-dark);
+}
+#header-full{
+    margin: 3em 0;
+}
+#header-small{
+    position: sticky;
+    top: -5em;
+    transition: top 2s;
+    margin: 0;
+    height: 5em;
+    background-color: var(--background-dark);
+    border-bottom: 4px solid var(--main-dark);
+}
+header p{
+    color: var(--main);
+    font-size: 3em;
+    margin: 0;
+}
+#header-small p{
+    font-size: 3em;
+}
+#header-full img{
+    height: 7em;
+}
+#header-small img{
+    height: 4em;
+    margin-right: 2em;
+}
+
+hr{
+    width: 80%;
+    border: 4px solid;
+    border-image-source: linear-gradient(to right, var(--background), var(--main), var(--main-dark), var(--main), var(--background));
+    border-image-slice: 1;
+    border-radius: 50%;
+    margin: 2em auto;
+}
+
+article{
+    padding: 0 1em;
+}
+
+.box-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}		
+.box{
+    max-width: calc(200px + 2em);
+    border: 4px solid;
+    border-image-slice: 1;
+    border-image-source: linear-gradient(45deg, var(--main), var(--main-dark), var(--main), var(--main-dark));
+    padding: 1em;
+    margin: 1em;
+    text-align: center;
+}
+.box img{
+    border-radius: 50%;
+    width: 100%;
+}
+.box-title{
+    font-weight: bold;
+    border-bottom: 2px solid var(--main-dark);
+}
+
+.cols2 {
+    background-image: url(/images/show-cooking-free.png);
+    background-repeat: no-repeat;
+}
+.cols2 p{
+    text-align: end;
+    display: table-cell;
+    vertical-align: middle;
+    height: inherit;
+}
+
+button{
+    background-color: var(--main);
+    border-radius: 8px;
+    width: 80%;
+    border: none;
+    box-shadow: 0px 0px 6px 1px var(--main-dark);
+    font: inherit;
+}
+
+@media only screen and (min-width: 600px){      
+    #header-full img{
+        height: 10em;
+    }
+    header p{
+        font-size: 5em;
+    }
+}
+@media only screen and (min-width: 768px){  
+    article{
+        padding: 0 5em;
+    }
+}
+@media only screen and (min-width: 992px){  
+    article{
+        padding: 0 10em;
+    }
+    .cols2{
+        padding-left: 30em;
+    }
+}
+@media only screen and (min-width: 1200px){
+    
+}
