@@ -17,6 +17,5 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/home', function () {
-    return view('home');
-});
+use App\Http\Controllers\HomeController;
+Route::get('/home/{name?}', [HomeController::class, 'getAllProducts']);
