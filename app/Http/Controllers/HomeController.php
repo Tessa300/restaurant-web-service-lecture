@@ -9,12 +9,17 @@ use Illuminate\Support\Facades\Http;
 
 class HomeController extends Controller
 {
-    public function show (string $name = "Tessa") :View {
-        return view('home', ['firstname'=>$name]);
+
+    public function show (int $reservationId = -1) :View {
+        return view('home', [
+            'reservationId'=>$reservationId, 
+            'products' => $this->getAllProducts(), 
+            'productImageUrl' => 'http://127.0.0.1:8000/images',
+        ]);
     }
 
     public function getAllProducts(){
         $response = Http::get('http://127.0.0.1:8000/api/products');
-        dd($response->json());
+        return $response->json();
     }
 }
