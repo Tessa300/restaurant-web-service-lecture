@@ -17,3 +17,7 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+use App\Http\Controllers\ReservationController;
+Route::get('/reservations/{date}/{guests}', [ReservationController::class, 'getAvailableTable']);
+Route::post('/reservations', [ReservationController::class, 'store']);

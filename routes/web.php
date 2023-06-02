@@ -22,3 +22,4 @@ Route::get('/home/{reservationId?}', [HomeController::class, 'show']);
 
 use App\Http\Controllers\OrderController;
 Route::post('/orders/{reservationId}', [OrderController::class, 'store']);
+Route::get('/orders/{reservationId}', [OrderController::class, 'show']);

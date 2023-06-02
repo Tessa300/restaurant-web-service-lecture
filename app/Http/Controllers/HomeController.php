@@ -22,4 +22,9 @@ class HomeController extends Controller
         $response = Http::get('http://127.0.0.1:8000/api/products');
         return $response->json();
     }
+
+    public static function getProduct(int $id){
+        $response = Http::get('http://127.0.0.1:8000/api/products/'.$id);
+        return $response->json();
+    }
 }
